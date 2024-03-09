@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicu-aura Face Capture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containerr">
+    <section class="left-section">
+        <img src="image/img.png.png" alt="Hospital Image" width="541" height="900">
+      </section>
+      <section class="right-section">
+    <div class="container">
+        <div class="camera-container">
+            <canvas id="canvasElement" width="514" height="450"></canvas>
+            <video id="videoElement " width="514" height="450" autoplay muted></video>
+            <button id="captureButton">Capture</button>
+        </div>
+    </div>
+    <button><a href="data.html">see capture</a></button>
+</div>
+    <body>
+    </html>
+    </body>
+    <script >
+        
+        navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var videoElement = document.getElementById('videoElement');
+        videoElement.srcObject = stream;
+      })
+      .catch(function(error) {
+        console.error('Error accessing the camera: ', error);
+      });
+
+    // Capture photo 
+    var captureButton = document.getElementById('captureButton');
+    captureButton.addEventListener('click', function() {
+      var videoElement = document.getElementById('videoElement');
+      var canvasElement = document.getElementById('canvasElement');
+      var context = canvasElement.getContext('2d');
+
+      // Set canvas dimensions 
+      canvasElement.width = videoElement.videoWidth;
+      canvasElement.height = videoElement.videoHeight;
+
+      context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+
+      // Convert canvas content to base64 encoded PNG image
+      var imageData = canvasElement.toDataURL('image/png');
+
+      // Create a temporary link to download the image
+      var link = document.createElement('a');
+      link.href = imageData;
+      link.download = 'captured_photo.png';
+      link.click();
+    });
+    </script>
+</body>
+</html>

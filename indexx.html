@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Signup</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <div class="container" >
+    <section class="left-section">
+      <img src="image/img.png.png" alt="Hospital Image" width="541" height="900">
+    </section>
+    <section class="right-section">
+       
+      <form id="signup-form"  action="/submit" class="box">
+        <h1 id="h1" align="center">Sign up / Login</h1>
+        <img src="image/icon.png" alt="icon">
+       
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="text" class="form-control" placeholder="Hospital name"required style="flex: 1;">
+            <input type="email" class="form-control" placeholder="Email ID" required style="flex: 1;">
+          
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="text" class="form-control" placeholder="Address" required style="flex: 1;">
+            <input type="number" class="form-control" placeholder="Phone Number" required style="flex: 1;">
+          
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="text" class="form-control" placeholder="City" required style="flex: 1;">
+            <input type="text" class="form-control" placeholder="Hospital  Registration Number"required style="flex: 1;">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="text" class="form-control" placeholder="State"required style="flex: 1;">
+            <input type="number" class="form-control" placeholder="Emergency Ward Number"required style="flex: 1;">
+          
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="text" class="form-control" placeholder="pincode"required style="flex: 1;">
+            <input type="file" class="form-control" id="file" placeholder="Registration certificate Upload"required accept=".pdf,.doc,.docx,.jpg,.png"style="flex: 1;">
+          
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+           
+            <input type="number" class="form-control" placeholder="Emergency Ward Number"required style="flex: 1;">
+          </div>
+          
+          <label for="hospitalRegistrationDate" class="hospitalRegistrationDate" required>Hospital Registration Date:</label>
+          <input type="date"  placeholder="Date" >
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="password" class="form-control" placeholder="password" required style="flex: 1;">
+            <input type="password" class="form-control" placeholder="confirm Password" required style="flex: 1;">
+          
+          </div>
+          <button type="submit" align="center" id="submitbutton">Sign Up</button>
+</form>
+    </section>
+  </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <p>Registration Successful!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
